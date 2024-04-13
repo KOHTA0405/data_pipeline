@@ -5,6 +5,10 @@ on:
     branches-ignore:
       - 'main'
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
 # this job runs SQLFluff with a specific set of rules
   # note the dialect is set to Snowflake, so make that specific to your setup
