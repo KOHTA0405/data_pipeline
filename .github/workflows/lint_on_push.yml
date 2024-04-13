@@ -5,6 +5,10 @@ on:
     branches-ignore:
       - 'main'
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
 # this job runs SQLFluff with a specific set of rules
   # note the dialect is set to Snowflake, so make that specific to your setup
@@ -21,5 +25,5 @@ jobs:
       - name: Install SQLFluff
         run: "pip install sqlfluff==0.13.1"
       - name: Lint project
-        run: "sqlfluff lint models --dialect bigquery"
+        run: "sqlfluff lint ./dbt_project/models --dialect bigquery"
 
