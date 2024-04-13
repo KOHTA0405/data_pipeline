@@ -1,0 +1,5 @@
+black
+dbt-core
+dbt-bigquery
+flake8
+sqlfluff
