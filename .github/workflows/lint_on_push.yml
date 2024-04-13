@@ -21,5 +21,5 @@ jobs:
       - name: Install SQLFluff
         run: "pip install sqlfluff==0.13.1"
       - name: Lint project
-        run: "sqlfluff lint ./dbt_project_/models --dialect bigquery"
+        run: "sqlfluff lint ./dbt_project/models --dialect bigquery"
 
