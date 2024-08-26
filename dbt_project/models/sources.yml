@@ -1,0 +1,14 @@
+version: 2
+
+version: 2
+
+sources:
+  - name: dev
+    schema: landing
+    tables:
+      - name: raw_customers
+        description: '{{ doc("table__raw_customers") }}'
+      - name: raw_orders
+        description: '{{ doc("table__raw_orders") }}'
+      - name: raw_payments
+        description: '{{ doc("table__raw_payments") }}'
