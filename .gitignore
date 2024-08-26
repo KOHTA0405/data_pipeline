@@ -163,3 +163,4 @@ cython_debug/
 **.gitkeep
 **.user.yml
 **.gitignore
+dbt_project/data/*
