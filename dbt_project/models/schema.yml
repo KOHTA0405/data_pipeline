@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: '{{ doc("table__raw_customers") }}'
+    columns:
+      - name: customer_id
+        description: '{{ doc("column__raw_customers__id") }}'
+      - name: first_name
+        description: '{{ doc("column__raw_customers__first_name") }}'
+      - name: last_name
+        description: '{{ doc("column__raw_customers__last_name") }}'
+
+  - name: stg_orders
+    description: ''
+    columns:
+      - name: order_id
+        description: ''
+      - name: customer_id
+        description: ''
+      - name: order_date
+        description: ''
+      - name: status
+        description: ''
+
+  - name: stg_payments
+    description: ''
+    columns:
+      - name: id
+        description: ''
+      - name: order_id
+        description: ''
+      - name: payment_method
+        description: ''
+      - name: amount
+        description: ''

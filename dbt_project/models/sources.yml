@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: dev
+    schema: landing
+    tables:
+      - name: raw_customers
+        description: '{{ doc("table__raw_customers") }}'
+        columns:
+          - name: id
+            description: '{{ doc("column__raw_customers__id") }}'
+          - name: first_name
+            description: '{{ doc("column__raw_customers__first_name") }}'
+          - name: last_name
+            description: '{{ doc("column__raw_customers__last_name") }}'
+      
+      - name: raw_orders
+        description: '{{ doc("table__raw_orders") }}'
+        columns:
+          - name: id
+            description: '{{ doc("column__raw_orders__id") }}'
+          - name: user_id
+            description: '{{ doc("column__raw_orders__user_id") }}'
+          - name: order_date
+            description: '{{ doc("column__raw_orders__order_date") }}'
+          - name: status
+            description: '{{ doc("column__raw_orders__status") }}'
+      
+      - name: raw_payments
+        description: '{{ doc("table__raw_payments") }}'
+        columns:
+          - name: id
+            description: '{{ doc("column__raw_payments__id") }}'
+          - name: order_id
+            description: '{{ doc("column__raw_payments__order_id") }}'
+          - name: payment_method
+            description: '{{ doc("column__raw_payments__payment_method") }}'
+          - name: amount
+            description: '{{ doc("column__raw_payments__amount") }}'

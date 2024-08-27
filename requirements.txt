@@ -1,5 +1,6 @@
 black
 dbt-core
 dbt-bigquery
+dbt-osmosis
 flake8
 sqlfluff
