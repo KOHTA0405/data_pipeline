@@ -2,14 +2,14 @@ version: 2
 
 models:
   - name: stg_customers
-    description: ''
+    description: '{{ doc("table__raw_customers") }}'
     columns:
-      - name: id
-        description: ''
+      - name: customer_id
+        description: '{{ doc("column__raw_customers__id") }}'
       - name: first_name
-        description: ''
+        description: '{{ doc("column__raw_customers__first_name") }}'
       - name: last_name
-        description: ''
+        description: '{{ doc("column__raw_customers__last_name") }}'
 
   - name: stg_orders
     description: ''
