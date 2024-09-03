@@ -1,7 +1,7 @@
 dbt_project:
   outputs:
     dev:
-      dataset: landing
+      dataset: data_lake
       job_execution_timeout_seconds: 300
       job_retries: 1
       keyfile: /Users/kohta/.key/gcp/dev-service-account-dbt.json
@@ -12,7 +12,7 @@ dbt_project:
       threads: 1
       type: bigquery
     prd:
-      dataset: landing
+      dataset: data_lake
       job_execution_timeout_seconds: 300
       job_retries: 1
       keyfile: /Users/kohta/.key/gcp/prd-service-account-dbt.json

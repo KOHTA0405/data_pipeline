@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: dev
-    schema: landing
+    schema: data_lake
     tables:
       - name: raw_customers
         description: '{{ doc("table__raw_customers") }}'
@@ -37,3 +37,10 @@ sources:
             description: '{{ doc("column__raw_payments__payment_method") }}'
           - name: amount
             description: '{{ doc("column__raw_payments__amount") }}'
+      
+      - name: raw_product
+        columns:
+          - name: id
+          - name: name
+          - name: created_at
+          - name: updated_at
