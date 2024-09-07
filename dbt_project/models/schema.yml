@@ -10,6 +10,13 @@ models:
         description: '{{ doc("column__raw_customers__first_name") }}'
       - name: last_name
         description: '{{ doc("column__raw_customers__last_name") }}'
+      - name: loaded_at_jst
+        description: 'ロード日時'
+    data_tests:
+      - dbt_utils.recency:
+          datepart: day
+          field: timestamp(loaded_at_jst, 'Asia/Tokyo')
+          interval: '{{ 1 if target.name == prd else 7}}'
 
   - name: stg_orders
     description: ''

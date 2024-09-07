@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized = "table"
+  )
+}}
+
 with source as (
     select * from {{ source('dev', 'raw_payments') }}
 
@@ -11,7 +17,8 @@ renamed as (
         payment_method,
 
         -- `amount` is currently stored in cents, so we convert it to dollars
-        amount / 100 as amount
+        amount / 100 as amount,
+        current_datetime('Asia/Tokyo') as loaded_at_jst
 
     from source
 
