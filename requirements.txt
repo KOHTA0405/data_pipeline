@@ -3,4 +3,6 @@ dbt-core
 dbt-bigquery
 dbt-osmosis
 flake8
+prefect==2.20.9
+prefect[dbt]
 sqlfluff
