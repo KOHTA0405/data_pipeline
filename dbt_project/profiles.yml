@@ -23,3 +23,14 @@ dbt_project:
       threads: 1
       type: bigquery
   target: dev
+
+elementary:
+  outputs:
+    default:
+      type: "bigquery"
+      project: "dev-project-kohta-401305"
+      dataset: "data_lake_elementary"
+      method: service-account
+      keyfile: /Users/kohta/.key/gcp/dev-service-account-dbt.json
+      priority: interactive
+      threads: 1

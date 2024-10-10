@@ -2,6 +2,7 @@ black
 dbt-core
 dbt-bigquery
 dbt-osmosis
+elementary-data
 flake8
 prefect==2.20.9
 prefect[dbt]
