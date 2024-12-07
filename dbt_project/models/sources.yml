@@ -44,3 +44,18 @@ sources:
           - name: name
           - name: created_at
           - name: updated_at
+
+  - name: test_source
+    schema: data_lake
+    tables:
+      - name: raw_product
+        description: テスト用の製品テーブル
+        columns:
+          - name: id
+            description: 主キーとしてのid
+          - name: name
+            description: 製品名
+          - name: created_at
+            description: レコード作成日時
+          - name: updated_at
+            description: レコード更新日時
