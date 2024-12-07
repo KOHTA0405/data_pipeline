@@ -15,6 +15,6 @@ select
     created_at,
     updated_at,
     current_timestamp() as last_updated_at
-from {{ source("test_source", "raw_product") }}
+from {{ source("test_source", "raw_products") }}
 
 {% endsnapshot %}

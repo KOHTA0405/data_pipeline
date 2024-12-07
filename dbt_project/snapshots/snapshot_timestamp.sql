@@ -14,6 +14,6 @@ select
     name,
     created_at,
     updated_at
-from {{ source("test_source", "raw_product") }}
+from {{ source("test_source", "raw_products") }}
 
 {% endsnapshot %}

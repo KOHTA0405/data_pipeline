@@ -48,7 +48,7 @@ sources:
   - name: test_source
     schema: data_lake
     tables:
-      - name: raw_product
+      - name: raw_products
         description: テスト用の製品テーブル
         columns:
           - name: id
