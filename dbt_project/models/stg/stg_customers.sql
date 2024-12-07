@@ -5,7 +5,7 @@
 }}
 
 with source as (
-    select * from {{ source('dev', 'raw_customers') }}
+    select * from {{ source('jaffle_shop', 'raw_customers') }}
 
 ),
 
