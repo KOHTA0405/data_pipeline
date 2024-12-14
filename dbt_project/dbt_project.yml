@@ -36,5 +36,8 @@ models:
 
   ## elementary models will be created in the schema '<your_schema>_elementary'
   ## for details, see docs: https://docs.elementary-data.com/
-  elementary:
-    +schema: "elementary"
+  # elementary:
+  #   +schema: "elementary"
+
+
+on-run-end: "{{ log_results(results) }}"

@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: dev
+  - name: jaffle_shop
     schema: data_lake
     tables:
       - name: raw_customers
@@ -13,7 +13,7 @@ sources:
             description: '{{ doc("column__raw_customers__first_name") }}'
           - name: last_name
             description: '{{ doc("column__raw_customers__last_name") }}'
-      
+
       - name: raw_orders
         description: '{{ doc("table__raw_orders") }}'
         columns:
@@ -25,7 +25,7 @@ sources:
             description: '{{ doc("column__raw_orders__order_date") }}'
           - name: status
             description: '{{ doc("column__raw_orders__status") }}'
-      
+
       - name: raw_payments
         description: '{{ doc("table__raw_payments") }}'
         columns:
@@ -37,10 +37,25 @@ sources:
             description: '{{ doc("column__raw_payments__payment_method") }}'
           - name: amount
             description: '{{ doc("column__raw_payments__amount") }}'
-      
+
       - name: raw_product
         columns:
           - name: id
           - name: name
           - name: created_at
           - name: updated_at
+
+  - name: test_source
+    schema: data_lake
+    tables:
+      - name: raw_products
+        description: テスト用の製品テーブル
+        columns:
+          - name: id
+            description: 主キーとしてのid
+          - name: name
+            description: 製品名
+          - name: created_at
+            description: レコード作成日時
+          - name: updated_at
+            description: レコード更新日時
