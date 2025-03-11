@@ -4,6 +4,7 @@ dbt-bigquery
 dbt-osmosis
 elementary-data
 flake8
+jupyterlab
 prefect==2.20.9
 prefect[dbt]
 sqlfluff
