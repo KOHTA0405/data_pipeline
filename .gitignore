@@ -162,6 +162,4 @@ cython_debug/
 .python-version
 **.gitkeep
 **.user.yml
-dbt_project/data/*
-dbt_project/package-lock.yml
-dbt_project/edr_target/*
+dbt/dbt_project/dbt_packages/*
