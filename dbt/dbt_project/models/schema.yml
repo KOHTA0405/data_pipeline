@@ -27,7 +27,7 @@ models:
         description: '顧客ID'
         meta:
           metrics:
-            num_unique_user_ids
+            num_unique_user_ids:
               type: count_distinct
             num_user_ids:
               type: count
