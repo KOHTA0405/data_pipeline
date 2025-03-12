@@ -2,14 +2,14 @@ version: 2
 
 models:
   - name: stg_customers
-    description: '{{ doc("table__raw_customers") }}'
+    description: '顧客テーブル'
     columns:
       - name: customer_id
-        description: '{{ doc("column__raw_customers__id") }}'
+        description: '顧客ID'
       - name: first_name
-        description: '{{ doc("column__raw_customers__first_name") }}'
+        description: '名'
       - name: last_name
-        description: '{{ doc("column__raw_customers__last_name") }}'
+        description: '姓'
       - name: loaded_at_jst
         description: 'ロード日時'
     data_tests:
@@ -19,25 +19,29 @@ models:
           interval: '{{ 1 if target.name == prd else 7}}'
 
   - name: stg_orders
-    description: ''
+    description: '注文テーブル'
     columns:
       - name: order_id
-        description: ''
+        description: '注文ID'
       - name: customer_id
-        description: ''
+        description: '顧客ID'
       - name: order_date
-        description: ''
+        description: '注文日'
       - name: status
-        description: ''
+        description: '注文ステータス'
+      - name: loaded_at_jst
+        description: 'ロード日時'
 
   - name: stg_payments
-    description: ''
+    description: '支払いテーブル'
     columns:
       - name: id
-        description: ''
+        description: '支払いID'
       - name: order_id
-        description: ''
+        description: '注文ID'
       - name: payment_method
-        description: ''
+        description: '支払い方法'
       - name: amount
-        description: ''
+        description: '支払い金額'
+      - name: loaded_at_jst
+        description: 'ロード日時'
