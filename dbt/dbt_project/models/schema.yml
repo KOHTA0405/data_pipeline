@@ -25,6 +25,12 @@ models:
         description: '注文ID'
       - name: customer_id
         description: '顧客ID'
+        meta:
+          metrics:
+            num_unique_user_ids
+              type: count_distinct
+            num_user_ids:
+              type: count
       - name: order_date
         description: '注文日'
       - name: status
