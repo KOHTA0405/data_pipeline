@@ -163,3 +163,4 @@ cython_debug/
 **.gitkeep
 **.user.yml
 dbt/dbt_project/dbt_packages/*
+**/.terraform/
