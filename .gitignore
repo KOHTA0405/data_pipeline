@@ -164,3 +164,4 @@ cython_debug/
 **.user.yml
 dbt/dbt_project/dbt_packages/*
 **/.terraform/
+.envrc
