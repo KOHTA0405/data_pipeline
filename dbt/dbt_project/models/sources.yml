@@ -3,59 +3,22 @@ version: 2
 sources:
   - name: jaffle_shop
     schema: data_lake
+    description: E-commerce data for the Jaffle Shop
+    freshness:
+      warn_after:
+        count: 24
+        period: hour
     tables:
       - name: raw_customers
-        description: '{{ doc("table__raw_customers") }}'
-        columns:
-          - name: id
-            description: '{{ doc("column__raw_customers__id") }}'
-          - name: first_name
-            description: '{{ doc("column__raw_customers__first_name") }}'
-          - name: last_name
-            description: '{{ doc("column__raw_customers__last_name") }}'
-
+        description: One record per person who has purchased one or more items
       - name: raw_orders
-        description: '{{ doc("table__raw_orders") }}'
-        columns:
-          - name: id
-            description: '{{ doc("column__raw_orders__id") }}'
-          - name: user_id
-            description: '{{ doc("column__raw_orders__user_id") }}'
-          - name: order_date
-            description: '{{ doc("column__raw_orders__order_date") }}'
-          - name: status
-            description: '{{ doc("column__raw_orders__status") }}'
-
-      - name: raw_payments
-        description: '{{ doc("table__raw_payments") }}'
-        columns:
-          - name: id
-            description: '{{ doc("column__raw_payments__id") }}'
-          - name: order_id
-            description: '{{ doc("column__raw_payments__order_id") }}'
-          - name: payment_method
-            description: '{{ doc("column__raw_payments__payment_method") }}'
-          - name: amount
-            description: '{{ doc("column__raw_payments__amount") }}'
-
-      - name: raw_product
-        columns:
-          - name: id
-          - name: name
-          - name: created_at
-          - name: updated_at
-
-  - name: test_source
-    schema: data_lake
-    tables:
+        description: One record per order (consisting of one or more order items)
+        loaded_at_field: ordered_at
+      - name: raw_items
+        description: Items included in an order
+      - name: raw_stores
+        loaded_at_field: opened_at
       - name: raw_products
-        description: テスト用の製品テーブル
-        columns:
-          - name: id
-            description: 主キーとしてのid
-          - name: name
-            description: 製品名
-          - name: created_at
-            description: レコード作成日時
-          - name: updated_at
-            description: レコード更新日時
+        description: One record per SKU for items sold in stores
+      - name: raw_supplies
+        description: One record per supply per SKU of items sold in stores
