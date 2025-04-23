@@ -1,10 +1,7 @@
-{{
-  config(
-    materialized = "table"
-  )
-}}
+with
 
-with source as (
+source as (
+
     select * from {{ source('jaffle_shop', 'raw_customers') }}
 
 ),
@@ -12,10 +9,12 @@ with source as (
 renamed as (
 
     select
+
+        ----------  ids
         id as customer_id,
-        first_name,
-        last_name,
-        current_datetime('Asia/Tokyo') as loaded_at_jst
+
+        ---------- text
+        name as customer_name
 
     from source
 
