@@ -9,6 +9,8 @@ models:
         # data_tests:
         #   - not_null
         #   - unique
+      - name: customer_name
+        description: The name of the customer.
 
   - name: stg_locations
     description: List of open locations with basic cleaning and transformation applied, one row per location.
@@ -18,6 +20,12 @@ models:
         # data_tests:
         #   - not_null
         #   - unique
+      - name: location_name
+        description: The name of the location.
+      - name: tax_rate
+        description: The tax rate for the location.
+      - name: opened_date
+        description: The date the location was opened.
 
   - name: stg_order_items
     description: Individual food and drink items that make up our orders, one row per item.
@@ -34,6 +42,8 @@ models:
         #   - relationships:
         #       to: ref('stg_orders')
         #       field: order_id
+      - name: product_id
+        description: The product that was ordered.
 
   - name: stg_orders
     description: Order data with basic cleaning and transformation applied, one row per order.
@@ -46,6 +56,15 @@ models:
         # data_tests:
         #   - not_null
         #   - unique
+      - name: location_id
+      - name: customer_id
+      - name: subtotal_cents
+      - name: tax_paid_cents
+      - name: order_total_cents
+      - name: subtotal
+      - name: tax_paid
+      - name: order_total
+      - name: ordered_at
 
   - name: stg_products
     description: Product (food and drink items that can be ordered) data with basic cleaning and transformation applied, one row per product.
@@ -55,6 +74,12 @@ models:
         # data_tests:
         #   - not_null
         #   - unique
+      - name: product_name
+      - name: product_type
+      - name: product_descr
+      - name: product_price
+      - name: is_food_item
+      - name: is_drink_item
 
   - name: stg_supplies
     description: >
@@ -67,3 +92,8 @@ models:
         # data_tests:
         #   - not_null
         #   - unique
+      - name: supply_id
+      - name: product_id
+      - name: supply_name
+      - name: supply_cost
+      - name: is_perishable_supply
