@@ -56,12 +56,25 @@ models:
         # data_tests:
         #   - not_null
         #   - unique
+        meta:
+          metrics:
+            total_order_count:
+              type: count_distinct
       - name: location_id
       - name: customer_id
+        meta:
+          metrics:
+            distinct_user_ids:
+              type: count_distinct
       - name: subtotal_cents
       - name: tax_paid_cents
       - name: order_total_cents
       - name: subtotal
+        meta:
+          metrics:
+            total_sales:
+              type: sum
+              format: '$#,##0.00," K"'
       - name: tax_paid
       - name: order_total
       - name: ordered_at
