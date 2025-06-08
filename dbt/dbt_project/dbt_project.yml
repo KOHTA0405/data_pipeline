@@ -36,3 +36,6 @@ models:
     stg:
       +materialized: view
       +schema: staging
+    dwh:
+      +materialized: table
+      +schema: dwh
