@@ -50,9 +50,10 @@ final as (
         joined_orders__order_items.ordered_at,
         joined_orders__order_items.order_quantity,
         products_supplies.product_price,
+        products_supplies.supply_cost,
         joined_orders__order_items.order_id
     from joined_orders__order_items
     inner join aggregated_products__supplies as products_supplies
         on joined_orders__order_items.product_id = products_supplies.product_id
 )
-select count(*) from final
+select * from final
