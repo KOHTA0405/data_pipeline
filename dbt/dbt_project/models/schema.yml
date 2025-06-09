@@ -62,10 +62,6 @@ models:
               type: count_distinct
       - name: location_id
       - name: customer_id
-        meta:
-          metrics:
-            distinct_user_ids:
-              type: count_distinct
       - name: subtotal_cents
       - name: tax_paid_cents
       - name: order_total_cents
