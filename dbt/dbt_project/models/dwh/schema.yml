@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+      - name: customer_name
+  - name: dim_locations
+    columns:
+      - name: location_id
+      - name: location_name
+      - name: tax_rate
+      - name: opened_date
+  - name: dim_products
+    columns:
+      - name: product_id
+      - name: product_name
+      - name: product_type
+      - name: product_description
+  - name: dim_supplies
+    columns:
+      - name: supply_uuid
+      - name: supply_id
+      - name: product_id
+      - name: supply_name
+  - name: fact_orders
+    columns:
+      - name: product_id
+      - name: customer_id
+      - name: location_id
+      - name: ordered_at
+      - name: order_quantity
+      - name: product_price
+      - name: order_id
+        meta:
+          metrics:
+            distinct_customer_ids:
+              type: count_distinct
