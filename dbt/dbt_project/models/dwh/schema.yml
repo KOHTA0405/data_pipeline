@@ -24,13 +24,36 @@ models:
       - name: product_id
       - name: supply_name
   - name: fact_orders
+    meta:
+      metrics:
+        total_sales:
+          type: sum
+          sql: ${product_price} * ${order_quantity}
+        total_revenue:
+          type: sum
+          sql: (${product_price} - ${supply_cost}) * ${order_quantity}
+      joins:
+        - join: dim_products
+          type: inner
+          sql_on: ${fact_orders.product_id} = ${dim_products.product_id}
+        - join: dim_customers
+          type: inner
+          sql_on: ${fact_orders.customer_id} = ${dim_customers.customer_id}
+        - join: dim_locations
+          type: inner
+          sql_on: ${fact_orders.location_id} = ${dim_locations.location_id}
     columns:
       - name: product_id
       - name: customer_id
       - name: location_id
       - name: ordered_at
       - name: order_quantity
+        meta:
+          metrics:
+            total_product_sales_quantity:
+              type: sum
       - name: product_price
+      - name: supply_cost
       - name: order_id
         meta:
           metrics:
