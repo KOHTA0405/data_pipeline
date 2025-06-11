@@ -2,22 +2,30 @@ version: 2
 
 models:
   - name: dim_customers
+    meta:
+      group_label: DWH
     columns:
       - name: customer_id
       - name: customer_name
   - name: dim_locations
+    meta:
+      group_label: DWH
     columns:
       - name: location_id
       - name: location_name
       - name: tax_rate
       - name: opened_date
   - name: dim_products
+    meta:
+      group_label: DWH
     columns:
       - name: product_id
       - name: product_name
       - name: product_type
       - name: product_description
   - name: dim_supplies
+    meta:
+      group_label: DWH
     columns:
       - name: supply_uuid
       - name: supply_id
@@ -25,6 +33,7 @@ models:
       - name: supply_name
   - name: fact_orders
     meta:
+      group_label: DWH
       metrics:
         total_sales:
           type: sum
