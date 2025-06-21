@@ -1,0 +1,118 @@
+version: 2
+
+sources:
+  - name: thelook_ecommerce
+    description: "This is a source for the fictional ecommerce store TheLook. It contains raw tables about users, products, orders, etc."
+    # BigQuery public data project
+    database: bigquery-public-data
+    # TheLook dataset
+    schema: thelook_ecommerce
+
+    tables:
+      - name: users
+        description: "Raw user data, containing one record per user."
+        columns:
+          - name: id
+            description: "Primary key for the user."
+          - name: email
+            description: "User's email address."
+          - name: age
+            description: "User's age."
+          - name: gender
+            description: "User's gender."
+          - name: state
+            description: "State where the user lives."
+          - name: traffic_source
+            description: "Source from which the user arrived (e.g., Search, Display)."
+          - name: created_at
+            description: "Timestamp when the user was created."
+
+      - name: orders
+        description: "Raw order data, containing one record per order."
+        columns:
+          - name: order_id
+            description: "Primary key for the order."
+          - name: user_id
+            description: "Foreign key to the users table."
+          - name: status
+            description: "Status of the order (e.g., Complete, Shipped, Cancelled)."
+          - name: created_at
+            description: "Timestamp when the order was created."
+          - name: returned_at
+            description: "Timestamp when the order was returned."
+          - name: shipped_at
+            description: "Timestamp when the order was shipped."
+          - name: num_of_item
+            description: "Number of items in the order."
+
+      - name: order_items
+        description: "Line items for each order. One record per product in an order."
+        columns:
+          - name: id
+            description: "Primary key for the order item."
+          - name: order_id
+            description: "Foreign key to the orders table."
+          - name: user_id
+            description: "Foreign key to the users table."
+          - name: product_id
+            description: "Foreign key to the products table."
+          - name: sale_price
+            description: "The price at which the item was sold."
+
+      - name: products
+        description: "Raw product data."
+        columns:
+          - name: id
+            description: "Primary key for the product."
+          - name: cost
+            description: "Cost of the product to the business."
+          - name: retail_price
+            description: "Retail price of the product."
+          - name: department
+            description: "Product department (e.g., Men, Women)."
+          - name: brand
+            description: "Brand name of the product."
+
+      - name: inventory_items
+        description: "Inventory level for each product."
+        columns:
+          - name: id
+            description: "Primary key for the inventory item."
+          - name: product_id
+            description: "Foreign key to the products table."
+          - name: created_at
+            description: "Timestamp when the inventory item was created."
+          - name: sold_at
+            description: "Timestamp when the inventory item was sold."
+          - name: cost
+            description: "Cost of the inventory item."
+          - name: product_distribution_center_id
+            description: "Foreign key to the distribution centers table."
+
+      - name: events
+        description: "User interaction events on the website."
+        columns:
+          - name: id
+            description: "Primary key for the event."
+          - name: user_id
+            description: "Foreign key to the users table."
+          - name: sequence_number
+            description: "The sequence number of the event for a given session."
+          - name: session_id
+            description: "Unique identifier for the user session."
+          - name: event_type
+            description: "Type of event (e.g., page_view, add_to_cart, purchase)."
+          - name: created_at
+            description: "Timestamp when the event occurred."
+
+      - name: distribution_centers
+        description: "Distribution and fulfillment centers."
+        columns:
+          - name: id
+            description: "Primary key for the distribution center."
+          - name: name
+            description: "Name of the distribution center."
+          - name: latitude
+            description: "Latitude of the distribution center."
+          - name: longitude
+            description: "Longitude of the distribution center."
