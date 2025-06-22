@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: stg_ec_distribution_centers
+    columns:
+      - name: id
+        description: ''
+      - name: name
+        description: ''
+      - name: latitude
+        description: ''
+      - name: longitude
+        description: ''
+      - name: distribution_center_geom
+        description: ''
