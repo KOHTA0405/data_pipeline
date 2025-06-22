@@ -1,4 +1,12 @@
 {
     "python-envs.pythonProjects": [],
-    "dbt.perspectiveTheme": "Vintage"
+    "dbt.perspectiveTheme": "Vintage",
+    "dbt.enableNewLineagePanel": true,
+    "sqlfluff.executablePath": "/Users/kohta/workspace/DataAnalysisPlatform/.venv/bin/sqlfluff",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dorzey.vscode-sqlfluff",
+    "sqlfluff.format.enabled": true,
+    "sqlfluff.format.config": {
+        "dialect": "bigquery"
+    },
 }
