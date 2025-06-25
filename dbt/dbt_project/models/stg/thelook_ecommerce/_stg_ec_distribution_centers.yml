@@ -2,9 +2,9 @@ version: 2
 models:
   - name: stg_ec_distribution_centers
     columns:
-      - name: id
+      - name: distribution_center_id
         description: ''
-      - name: name
+      - name: distribution_center_name
         description: ''
       - name: latitude
         description: ''

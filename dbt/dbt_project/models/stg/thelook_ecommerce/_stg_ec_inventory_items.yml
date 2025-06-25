@@ -2,7 +2,7 @@ version: 2
 models:
   - name: stg_ec_inventory_items
     columns:
-      - name: id
+      - name: inventory_item_id
         description: ''
       - name: product_id
         description: ''

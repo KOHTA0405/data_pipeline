@@ -2,21 +2,21 @@ version: 2
 models:
   - name: stg_ec_products
     columns:
-      - name: id
+      - name: product_id
         description: ''
-      - name: cost
+      - name: product_sku
         description: ''
-      - name: category
+      - name: product_name
         description: ''
-      - name: name
+      - name: product_category
         description: ''
       - name: brand
         description: ''
-      - name: retail_price
-        description: ''
       - name: department
         description: ''
-      - name: sku
-        description: ''
       - name: distribution_center_id
+        description: ''
+      - name: retail_price
+        description: ''
+      - name: cost
         description: ''

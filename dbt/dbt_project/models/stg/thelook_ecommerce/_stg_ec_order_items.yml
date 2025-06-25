@@ -2,7 +2,7 @@ version: 2
 models:
   - name: stg_ec_order_items
     columns:
-      - name: id
+      - name: order_item_id
         description: ''
       - name: order_id
         description: ''
