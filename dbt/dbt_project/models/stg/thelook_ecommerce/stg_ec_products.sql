@@ -6,7 +6,17 @@ with source as (
 
 renamed as (
 
-    select * from source
+    select
+        id as product_id,
+        sku as product_sku,
+        name as product_name,
+        category as product_category,
+        brand,
+        department,
+        distribution_center_id,
+        retail_price,
+        cost
+    from source
 
 )
 
