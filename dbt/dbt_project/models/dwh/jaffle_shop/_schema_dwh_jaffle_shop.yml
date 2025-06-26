@@ -3,13 +3,13 @@ version: 2
 models:
   - name: dim_customers
     meta:
-      group_label: DWH
+      group_label: DWH Jaffle Shop
     columns:
       - name: customer_id
       - name: customer_name
   - name: dim_locations
     meta:
-      group_label: DWH
+      group_label: DWH Jaffle Shop
     columns:
       - name: location_id
       - name: location_name
@@ -17,7 +17,7 @@ models:
       - name: opened_date
   - name: dim_products
     meta:
-      group_label: DWH
+      group_label: DWH Jaffle Shop
     columns:
       - name: product_id
       - name: product_name
@@ -25,7 +25,7 @@ models:
       - name: product_description
   - name: dim_supplies
     meta:
-      group_label: DWH
+      group_label: DWH Jaffle Shop
     columns:
       - name: supply_uuid
       - name: supply_id
@@ -33,7 +33,7 @@ models:
       - name: supply_name
   - name: fact_orders
     meta:
-      group_label: DWH
+      group_label: DWH Jaffle Shop
       metrics:
         total_sales:
           type: sum
