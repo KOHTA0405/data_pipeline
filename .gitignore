@@ -164,6 +164,6 @@ cython_debug/
 **.user.yml
 dbt/dbt_project/dbt_packages/*
 
-terraform/snowflake/.terraform/*
-terraform/snowflake/.envrc
+terraform/archive_snowflake/.terraform/*
+terraform/archive_snowflake/.envrc
 .cursor/mcp.json
