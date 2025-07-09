@@ -5,6 +5,7 @@ dbt-osmosis
 elementary-data
 flake8
 jupyterlab
+pre-commit
 prefect==2.20.9
 prefect[dbt]
 sqlfluff
