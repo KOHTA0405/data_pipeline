@@ -166,4 +166,5 @@ dbt/dbt_project/dbt_packages/*
 
 terraform/archive_snowflake/.terraform/*
 terraform/archive_snowflake/.envrc
+terraform/snowflake/.terraform/*
 .cursor/mcp.json
