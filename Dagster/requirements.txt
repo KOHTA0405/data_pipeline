@@ -1,7 +1,0 @@
-black
-dbt-core
-dbt-bigquery
-dagster
-flake8
-pre-commit
-sqlfluff
