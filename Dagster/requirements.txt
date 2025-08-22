@@ -1,0 +1,6 @@
+black
+dbt-core
+dbt-bigquery
+flake8
+pre-commit
+sqlfluff
