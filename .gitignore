@@ -168,3 +168,4 @@ terraform/archive_snowflake/.terraform/*
 terraform/archive_snowflake/.envrc
 terraform/snowflake/.terraform/*
 .cursor/mcp.json
+Dagster/my-project/dbt/*
