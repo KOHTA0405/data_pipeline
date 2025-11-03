@@ -1,22 +1,24 @@
 version: 2
 models:
   - name: stg_ec_products
+    meta:
+      group_label: Stg TheLook Ecommerce
     columns:
       - name: product_id
-        description: ''
+        description: ""
       - name: product_sku
-        description: ''
+        description: ""
       - name: product_name
-        description: ''
+        description: ""
       - name: product_category
-        description: ''
+        description: ""
       - name: brand
-        description: ''
+        description: ""
       - name: department
-        description: ''
+        description: ""
       - name: distribution_center_id
-        description: ''
+        description: ""
       - name: retail_price
-        description: ''
+        description: ""
       - name: cost
-        description: ''
+        description: ""

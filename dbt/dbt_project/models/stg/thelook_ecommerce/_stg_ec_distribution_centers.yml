@@ -1,14 +1,16 @@
 version: 2
 models:
   - name: stg_ec_distribution_centers
+    meta:
+      group_label: Stg TheLook Ecommerce
     columns:
       - name: distribution_center_id
-        description: ''
+        description: ""
       - name: distribution_center_name
-        description: ''
+        description: ""
       - name: latitude
-        description: ''
+        description: ""
       - name: longitude
-        description: ''
+        description: ""
       - name: distribution_center_geom
-        description: ''
+        description: ""

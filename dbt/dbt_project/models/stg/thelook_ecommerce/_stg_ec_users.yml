@@ -1,36 +1,38 @@
 version: 2
 models:
   - name: stg_ec_users
+    meta:
+      group_label: Stg TheLook Ecommerce
     columns:
       - name: id
-        description: ''
+        description: ""
       - name: first_name
-        description: ''
+        description: ""
       - name: last_name
-        description: ''
+        description: ""
       - name: email
-        description: ''
+        description: ""
       - name: age
-        description: ''
+        description: ""
       - name: gender
-        description: ''
+        description: ""
       - name: state
-        description: ''
+        description: ""
       - name: street_address
-        description: ''
+        description: ""
       - name: postal_code
-        description: ''
+        description: ""
       - name: city
-        description: ''
+        description: ""
       - name: country
-        description: ''
+        description: ""
       - name: latitude
-        description: ''
+        description: ""
       - name: longitude
-        description: ''
+        description: ""
       - name: traffic_source
-        description: ''
+        description: ""
       - name: created_at
-        description: ''
+        description: ""
       - name: user_geom
-        description: ''
+        description: ""

@@ -1,26 +1,28 @@
 version: 2
 models:
   - name: stg_ec_order_items
+    meta:
+      group_label: Stg TheLook Ecommerce
     columns:
       - name: order_item_id
-        description: ''
+        description: ""
       - name: order_id
-        description: ''
+        description: ""
       - name: user_id
-        description: ''
+        description: ""
       - name: product_id
-        description: ''
+        description: ""
       - name: inventory_item_id
-        description: ''
+        description: ""
       - name: status
-        description: ''
+        description: ""
       - name: created_at
-        description: ''
+        description: ""
       - name: shipped_at
-        description: ''
+        description: ""
       - name: delivered_at
-        description: ''
+        description: ""
       - name: returned_at
-        description: ''
+        description: ""
       - name: sale_price
-        description: ''
+        description: ""
