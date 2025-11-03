@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: dim_ec_users
+    meta:
+      group_label: DWH TheLook Ecommerce
+    columns:
+      - name: user_id
+      - name: first_name
+      - name: last_name
+      - name: full_name
+      - name: email
+      - name: age
+      - name: gender
+      - name: state
+      - name: city
+      - name: postal_code
+      - name: country
+      - name: traffic_source
+      - name: created_at
+
+  - name: dim_ec_products
+    meta:
+      group_label: DWH TheLook Ecommerce
+    columns:
+      - name: product_id
+      - name: product_sku
+      - name: product_name
+      - name: product_category
+      - name: brand
+      - name: department
+      - name: distribution_center_id
+      - name: retail_price
+      - name: cost
+      - name: profit_margin_percent
+
+  - name: dim_ec_distribution_centers
+    meta:
+      group_label: DWH TheLook Ecommerce
+    columns:
+      - name: distribution_center_id
+      - name: distribution_center_name
+      - name: latitude
+      - name: longitude
+      - name: distribution_center_geom
+
+  - name: dim_ec_order_status
+    meta:
+      group_label: DWH TheLook Ecommerce
+    columns:
+      - name: order_status
+      - name: order_status_description
+
+  - name: fact_ec_order_items
+    meta:
+      group_label: DWH TheLook Ecommerce
+      metrics:
+        total_sales:
+          type: sum
+          sql: ${sale_price} * ${order_quantity}
+        total_profit:
+          type: sum
+          sql: ${profit} * ${order_quantity}
+        total_cost:
+          type: sum
+          sql: ${cost} * ${order_quantity}
+      joins:
+        - join: dim_ec_users
+          type: inner
+          sql_on: ${fact_ec_order_items.user_id} = ${dim_ec_users.user_id}
+        - join: dim_ec_products
+          type: inner
+          sql_on: ${fact_ec_order_items.product_id} = ${dim_ec_products.product_id}
+        - join: dim_ec_distribution_centers
+          type: inner
+          sql_on: ${fact_ec_order_items.distribution_center_id} = ${dim_ec_distribution_centers.distribution_center_id}
+    columns:
+      - name: order_item_id
+      - name: order_id
+      - name: user_id
+      - name: product_id
+      - name: inventory_item_id
+      - name: status
+      - name: distribution_center_id
+      - name: order_date
+      - name: created_at
+      - name: shipped_at
+      - name: delivered_at
+      - name: returned_at
+      - name: sale_price
+      - name: cost
+      - name: profit
+      - name: order_quantity
+        meta:
+          metrics:
+            total_order_items_quantity:
+              type: sum
