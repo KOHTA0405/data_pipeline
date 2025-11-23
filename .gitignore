@@ -162,10 +162,9 @@ cython_debug/
 .python-version
 **.gitkeep
 **.user.yml
-dbt/dbt_project/dbt_packages/*
+dbt_bigquery/dbt_project/dbt_packages/*
 
 terraform/archive_snowflake/.terraform/*
 terraform/archive_snowflake/.envrc
 terraform/snowflake/.terraform/*
-.cursor/mcp.json
 Dagster/my-project/dbt/*
