@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    schema: data_lake
+    schema: raw
     description: E-commerce data for the Jaffle Shop
     freshness:
       warn_after:
