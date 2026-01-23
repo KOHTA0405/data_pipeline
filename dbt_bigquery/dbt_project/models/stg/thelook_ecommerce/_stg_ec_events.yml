@@ -1,9 +1,8 @@
 version: 2
 models:
   - name: stg_ec_events
-    config:
-      meta:
-        group_label: Stg TheLook Ecommerce
+    meta:
+      group_label: Stg TheLook Ecommerce
     columns:
       - name: event_id
         description: ""

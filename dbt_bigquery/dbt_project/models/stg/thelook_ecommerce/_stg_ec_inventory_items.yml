@@ -1,9 +1,8 @@
 version: 2
 models:
   - name: stg_ec_inventory_items
-    config:
-      meta:
-        group_label: Stg TheLook Ecommerce
+    meta:
+      group_label: Stg TheLook Ecommerce
     columns:
       - name: inventory_item_id
         description: ""
