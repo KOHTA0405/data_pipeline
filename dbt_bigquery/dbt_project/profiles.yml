@@ -4,12 +4,6 @@ dbt_project:
       dataset: raw
       job_execution_timeout_seconds: 300
       job_retries: 1
-      # 認証方法の優先順位:
-      # 1. 環境変数BIGQUERY_KEYFILE_JSON（CI環境で使用）
-      # 2. 環境変数GOOGLE_APPLICATION_CREDENTIALS（ローカル環境で使用）
-      # 3. keyfileパラメータ（上記が設定されていない場合のみ）
-      # ローカル環境では、環境変数GOOGLE_APPLICATION_CREDENTIALSを設定してください:
-      # export GOOGLE_APPLICATION_CREDENTIALS=/Users/kohta/.key/gcp/dev-service-account-dbt.json
       keyfile: /Users/kohta/.key/gcp/dev-service-account-dbt.json
       location: US
       method: service-account
@@ -21,12 +15,6 @@ dbt_project:
       dataset: raw
       job_execution_timeout_seconds: 300
       job_retries: 1
-      # 認証方法の優先順位:
-      # 1. 環境変数BIGQUERY_KEYFILE_JSON（CI環境で使用）
-      # 2. 環境変数GOOGLE_APPLICATION_CREDENTIALS（ローカル環境で使用）
-      # 3. keyfileパラメータ（上記が設定されていない場合のみ）
-      # ローカル環境では、環境変数GOOGLE_APPLICATION_CREDENTIALSを設定してください:
-      # export GOOGLE_APPLICATION_CREDENTIALS=/Users/kohta/.key/gcp/prd-service-account-dbt.json
       keyfile: /Users/kohta/.key/gcp/prd-service-account-dbt.json
       location: US
       method: service-account
@@ -42,12 +30,6 @@ elementary:
       dataset: raw
       job_execution_timeout_seconds: 300
       job_retries: 1
-      # 認証方法の優先順位:
-      # 1. 環境変数BIGQUERY_KEYFILE_JSON（CI環境で使用）
-      # 2. 環境変数GOOGLE_APPLICATION_CREDENTIALS（ローカル環境で使用）
-      # 3. keyfileパラメータ（上記が設定されていない場合のみ）
-      # ローカル環境では、環境変数GOOGLE_APPLICATION_CREDENTIALSを設定してください:
-      # export GOOGLE_APPLICATION_CREDENTIALS=/Users/kohta/.key/gcp/dev-service-account-dbt.json
       keyfile: /Users/kohta/.key/gcp/dev-service-account-dbt.json
       location: US
       method: service-account
@@ -59,12 +41,6 @@ elementary:
       dataset: raw
       job_execution_timeout_seconds: 300
       job_retries: 1
-      # 認証方法の優先順位:
-      # 1. 環境変数BIGQUERY_KEYFILE_JSON（CI環境で使用）
-      # 2. 環境変数GOOGLE_APPLICATION_CREDENTIALS（ローカル環境で使用）
-      # 3. keyfileパラメータ（上記が設定されていない場合のみ）
-      # ローカル環境では、環境変数GOOGLE_APPLICATION_CREDENTIALSを設定してください:
-      # export GOOGLE_APPLICATION_CREDENTIALS=/Users/kohta/.key/gcp/prd-service-account-dbt.json
       keyfile: /Users/kohta/.key/gcp/prd-service-account-dbt.json
       location: US
       method: service-account
