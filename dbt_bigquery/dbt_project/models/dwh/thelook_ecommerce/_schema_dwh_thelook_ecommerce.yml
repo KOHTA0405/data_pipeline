@@ -2,8 +2,9 @@ version: 2
 
 models:
   - name: dim_ec_users
-    meta:
-      group_label: DWH TheLook Ecommerce
+    config:
+      meta:
+        group_label: DWH TheLook Ecommerce
     columns:
       - name: user_id
       - name: first_name
@@ -20,8 +21,9 @@ models:
       - name: created_at
 
   - name: dim_ec_products
-    meta:
-      group_label: DWH TheLook Ecommerce
+    config:
+      meta:
+        group_label: DWH TheLook Ecommerce
     columns:
       - name: product_id
       - name: product_sku
@@ -35,8 +37,9 @@ models:
       - name: profit_margin_percent
 
   - name: dim_ec_distribution_centers
-    meta:
-      group_label: DWH TheLook Ecommerce
+    config:
+      meta:
+        group_label: DWH TheLook Ecommerce
     columns:
       - name: distribution_center_id
       - name: distribution_center_name
@@ -45,25 +48,27 @@ models:
       - name: distribution_center_geom
 
   - name: dim_ec_order_status
-    meta:
-      group_label: DWH TheLook Ecommerce
+    config:
+      meta:
+        group_label: DWH TheLook Ecommerce
     columns:
       - name: order_status
       - name: order_status_description
 
   - name: fact_ec_order_items
-    meta:
-      group_label: DWH TheLook Ecommerce
-      metrics:
-        total_sales:
-          type: sum
-          sql: ${sale_price} * ${order_quantity}
-        total_profit:
-          type: sum
-          sql: ${profit} * ${order_quantity}
-        total_cost:
-          type: sum
-          sql: ${cost} * ${order_quantity}
+    config:
+      meta:
+        group_label: DWH TheLook Ecommerce
+        metrics:
+          total_sales:
+            type: sum
+            sql: ${sale_price} * ${order_quantity}
+          total_profit:
+            type: sum
+            sql: ${profit} * ${order_quantity}
+          total_cost:
+            type: sum
+            sql: ${cost} * ${order_quantity}
       joins:
         - join: dim_ec_users
           type: inner
@@ -91,7 +96,8 @@ models:
       - name: cost
       - name: profit
       - name: order_quantity
-        meta:
-          metrics:
-            total_order_items_quantity:
-              type: sum
+        config:
+          meta:
+            metrics:
+              total_order_items_quantity:
+                type: sum

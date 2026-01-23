@@ -1,8 +1,9 @@
 version: 2
 models:
   - name: stg_ec_products
-    meta:
-      group_label: Stg TheLook Ecommerce
+    config:
+      meta:
+        group_label: Stg TheLook Ecommerce
     columns:
       - name: product_id
         description: ""

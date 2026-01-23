@@ -1,8 +1,9 @@
 version: 2
 models:
   - name: stg_ec_order_items
-    meta:
-      group_label: Stg TheLook Ecommerce
+    config:
+      meta:
+        group_label: Stg TheLook Ecommerce
     columns:
       - name: order_item_id
         description: ""

@@ -2,45 +2,50 @@ version: 2
 
 models:
   - name: dim_customers
-    meta:
-      group_label: DWH Jaffle Shop
+    config:
+      meta:
+        group_label: DWH Jaffle Shop
     columns:
       - name: customer_id
       - name: customer_name
   - name: dim_locations
-    meta:
-      group_label: DWH Jaffle Shop
+    config:
+      meta:
+        group_label: DWH Jaffle Shop
     columns:
       - name: location_id
       - name: location_name
       - name: tax_rate
       - name: opened_date
   - name: dim_products
-    meta:
-      group_label: DWH Jaffle Shop
+    config:
+      meta:
+        group_label: DWH Jaffle Shop
     columns:
       - name: product_id
       - name: product_name
       - name: product_type
       - name: product_description
   - name: dim_supplies
-    meta:
-      group_label: DWH Jaffle Shop
+    config:
+      meta:
+        group_label: DWH Jaffle Shop
     columns:
       - name: supply_uuid
       - name: supply_id
       - name: product_id
       - name: supply_name
   - name: fact_orders
-    meta:
-      group_label: DWH Jaffle Shop
-      metrics:
-        total_sales:
-          type: sum
-          sql: ${product_price} * ${order_quantity}
-        total_revenue:
-          type: sum
-          sql: (${product_price} - ${supply_cost}) * ${order_quantity}
+    config:
+      meta:
+        group_label: DWH Jaffle Shop
+        metrics:
+          total_sales:
+            type: sum
+            sql: ${product_price} * ${order_quantity}
+          total_revenue:
+            type: sum
+            sql: (${product_price} - ${supply_cost}) * ${order_quantity}
       joins:
         - join: dim_products
           type: inner
@@ -57,14 +62,16 @@ models:
       - name: location_id
       - name: ordered_at
       - name: order_quantity
-        meta:
-          metrics:
-            total_product_sales_quantity:
-              type: sum
+        config:
+          meta:
+            metrics:
+              total_product_sales_quantity:
+                type: sum
       - name: product_price
       - name: supply_cost
       - name: order_id
-        meta:
-          metrics:
-            distinct_customer_ids:
-              type: count_distinct
+        config:
+          meta:
+            metrics:
+              distinct_customer_ids:
+                type: count_distinct
