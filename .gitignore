@@ -170,5 +170,8 @@ terraform/snowflake/.terraform/*
 Dagster/my-project/dbt/*
 
 
+# internal packages
+**/dbt_internal_packages/*
+
 # elementary
 **/edr_target/*
