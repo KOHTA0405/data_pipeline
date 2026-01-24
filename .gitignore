@@ -168,3 +168,7 @@ terraform/archive_snowflake/.terraform/*
 terraform/archive_snowflake/.envrc
 terraform/snowflake/.terraform/*
 Dagster/my-project/dbt/*
+
+
+# elementary
+**/edr_target/*
