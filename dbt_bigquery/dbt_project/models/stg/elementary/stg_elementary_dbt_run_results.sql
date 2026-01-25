@@ -1,0 +1,22 @@
+select
+    model_execution_id,
+    unique_id,
+    invocation_id,
+    generated_at,
+    name,
+    message,
+    status,
+    resource_type,
+    execution_time,
+    timestamp(execute_started_at) as execute_started_at,
+    timestamp(execute_completed_at) as execute_completed_at,
+    timestamp(compile_started_at) as compile_started_at,
+    timestamp(compile_completed_at) as compile_completed_at,
+    rows_affected,
+    full_refresh,
+    compiled_code,
+    failures,
+    query_id,
+    thread_id,
+    adapter_response
+from {{ source('elementary_run_results', 'dbt_run_results') }}
