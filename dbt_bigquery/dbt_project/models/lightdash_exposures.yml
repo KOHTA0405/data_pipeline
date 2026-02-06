@@ -1,0 +1,55 @@
+version: 2
+exposures:
+  - name: ld_project_8b53e5d1_c916_459b_8608_5d28717492b3
+    type: application
+    owner:
+      name: KOHTA YOSHIKAWA
+      email: koh.yoshi.0405@gmail.com
+    label: Lightdash - BigQuery Project
+    description: Lightdash project
+    url: http://localhost:8080/projects/8b53e5d1-c916-459b-8608-5d28717492b3/home
+    depends_on:
+      - ref('dim_ec_users')
+      - ref('dim_ec_products')
+      - ref('fact_ec_order_items')
+      - ref('dim_ec_distribution_centers')
+    config:
+      tags:
+        - lightdash
+        - project
+  - name: ld_chart_6b557e61_5f69_4704_ace1_4271218e3a73
+    type: analysis
+    owner:
+      name: KOHTA YOSHIKAWA
+      email: ""
+    label: テストチャート
+    description: ""
+    url: >-
+      http://localhost:8080/projects/8b53e5d1-c916-459b-8608-5d28717492b3/saved/6b557e61-5f69-4704-ace1-4271218e3a73/view
+    depends_on:
+      - ref('dim_ec_users')
+      - ref('dim_ec_products')
+      - ref('fact_ec_order_items')
+      - ref('dim_ec_distribution_centers')
+    config:
+      tags:
+        - lightdash
+        - chart
+  - name: ld_dashboard_2bde742b_8555_4ac4_b685_6b976d8e0d3d
+    type: dashboard
+    owner:
+      name: KOHTA YOSHIKAWA
+      email: ""
+    label: テストダッシュボード
+    description: ""
+    url: >-
+      http://localhost:8080/projects/8b53e5d1-c916-459b-8608-5d28717492b3/dashboards/2bde742b-8555-4ac4-b685-6b976d8e0d3d/view
+    depends_on:
+      - ref('dim_ec_users')
+      - ref('dim_ec_products')
+      - ref('fact_ec_order_items')
+      - ref('dim_ec_distribution_centers')
+    config:
+      tags:
+        - lightdash
+        - dashboard
